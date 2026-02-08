@@ -127,85 +127,97 @@
                     © 2026 PEI Cricket Association. All Rights Reserved.
                 </div>
                 <div class="text-gray-600 text-[10px] uppercase tracking-[0.2em] font-bold">
-                    Designed for the Island • Developed by <span class="text-gray-400">moshr</span>
-                </div>
+  Designed for the Island • Developed by 
+  <a href="mailto:shareef3533@gmail.com" class="text-gray-400 hover:text-gray-300 transition">
+    moshr
+  </a>
+</div>
+
             </div>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
-    <script>
-        const images = [
-  'IMG_0275.JPG', 'IMG_0277.JPG', 'IMG_0278.JPG', 'IMG_0279.JPG', 'IMG_0280.JPG',
-  'IMG_0281.JPG', 'IMG_0282.JPG', 'IMG_0283.JPG', 'IMG_0284.JPG', 'IMG_0286.JPG',
-  'IMG_0287.JPG', 'IMG_0289.JPG', 'IMG_0744.jpg', 'IMG_0910.jpg', 'IMG_1350.jpg',
-  'IMG_1541.jpg', 'IMG_1663.jpg', 'IMG_1771.jpg', 'IMG_1920.jpg', 'IMG_2424.jpg',
-  'IMG_2502.JPG', 'IMG_2820.jpg', 'IMG_2821.jpg', 'IMG_2825.jpg', 'IMG_2827.jpg',
-  'IMG_5825.jpg', 'IMG_5827.jpg', 'IMG_5972.JPG', 'IMG_5982.JPG', 'IMG_5985.JPG',
-  'IMG_6081.jpg', 'IMG_6098.jpg', 'IMG_6099.jpg', 'IMG_6103.jpg', 'IMG_6358.JPEG',
-  'IMG_6374.JPEG', 'IMG_6395.JPEG', 'IMG_6405.JPEG', 'IMG_6445.JPEG', 'IMG_6643.JPEG',
-  'IMG_6678.jpg', 'IMG_6690.jpg', 'IMG_6807.jpg', 'IMG_7169.jpg', 'IMG_7172.jpg',
-  'IMG_7207.jpg', 'IMG_7219.jpg', 'IMG_7225.jpg', 'IMG_7233.jpg', 'IMG_7237.jpg',
-  'IMG_7388.jpg', 'IMG_7392.jpg', 'IMG_7396.jpg', 'IMG_7404.jpg', 'IMG_7443.jpg',
-  'IMG_7592.jpg', 'IMG_7888.jpg', 'IMG_8288.jpg', 'IMG_8299.jpg', 'IMG_8303.jpg',
-  'IMG_8308.jpg', 'IMG_8314.jpg',
+<script>
+    // List of manually named files
+    const manualImages = [
+        'IMG_0275.JPG', 'IMG_0277.JPG', 'IMG_0278.JPG', 'IMG_0279.JPG', 'IMG_0280.JPG',
+        'IMG_0281.JPG', 'IMG_0282.JPG', 'IMG_0283.JPG', 'IMG_0284.JPG', 'IMG_0286.JPG',
+        'IMG_0287.JPG', 'IMG_0289.JPG', 'IMG_0744.jpg', 'IMG_0910.jpg', 'IMG_1350.jpg',
+        'IMG_1541.jpg', 'IMG_1663.jpg', 'IMG_1771.jpg', 'IMG_1920.jpg', 'IMG_2424.jpg',
+        'IMG_2502.JPG', 'IMG_2820.jpg', 'IMG_2821.jpg', 'IMG_2825.jpg', 'IMG_2827.jpg',
+        'IMG_5825.jpg', 'IMG_5827.jpg', 'IMG_5972.JPG', 'IMG_5982.JPG', 'IMG_5985.JPG',
+        'IMG_6081.jpg', 'IMG_6098.jpg', 'IMG_6099.jpg', 'IMG_6103.jpg', 'IMG_6358.JPEG',
+        'IMG_6374.JPEG', 'IMG_6395.JPEG', 'IMG_6405.JPEG', 'IMG_6445.JPEG', 'IMG_6643.JPEG',
+        'IMG_6678.jpg', 'IMG_6690.jpg', 'IMG_6807.jpg', 'IMG_7169.jpg', 'IMG_7172.jpg',
+        'IMG_7207.jpg', 'IMG_7219.jpg', 'IMG_7225.jpg', 'IMG_7233.jpg', 'IMG_7237.jpg',
+        'IMG_7388.jpg', 'IMG_7392.jpg', 'IMG_7396.jpg', 'IMG_7404.jpg', 'IMG_7443.jpg',
+        'IMG_7592.jpg', 'IMG_7888.jpg', 'IMG_8288.jpg', 'IMG_8299.jpg', 'IMG_8303.jpg',
+        'IMG_8308.jpg', 'IMG_8314.jpg'
+    ];
 
-  // auto-generated gallery images
-  ...Array.from({ length: 61 }, (_, i) => `gallery${i + 1}.jpg`)
-];
+    // Generate gallery1.jpg through gallery61.jpg
+    const generatedImages = Array.from({ length: 61 }, (_, i) => `gallery${i + 1}.jpg`);
+    
+    // Combine both lists
+    const allImages = [...manualImages, ...generatedImages];
 
+    const galleryGrid = document.getElementById('gallery-grid');
+    const basePath = './src/images/gallery/';
 
-        const galleryGrid = document.getElementById('gallery-grid');
-        const basePath = './src/images/gallery/';
+    function initGallery() {
+        allImages.forEach((img) => {
+            const card = document.createElement('div');
+            // We use encodeURIComponent in case you have spaces or parentheses in the filenames
+            const safeImgName = img.replace(/\s/g, '%20'); 
+            const fullPath = `${basePath}${safeImgName}`;
 
-        function initGallery() {
-            images.forEach((img) => {
-                const card = document.createElement('div');
-                card.className = "gallery-item gallery-card group relative overflow-hidden rounded-2xl md:rounded-[2rem] bg-gray-100 aspect-square shadow-sm cursor-pointer border border-gray-100";
-                
-                card.innerHTML = `
-                    <a href="${basePath}${img}" class="glightbox block w-full h-full">
-                        <img src="${basePath}${img}" 
-                             alt="Cricket PEI Action" 
-                             class="h-full w-full object-cover transition-transform duration-700 ease-out"
-                             loading="lazy"
-                             onerror="this.closest('.gallery-item').remove()">
-                        
-                        <div class="overlay absolute inset-0 bg-blue-900/40 opacity-0 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
-                            <div class="bg-white/20 backdrop-blur-xl p-4 md:p-5 rounded-full border border-white/30 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                <i class="fa-solid fa-magnifying-glass-plus text-white text-xl md:text-2xl"></i>
-                            </div>
+            card.className = "gallery-item gallery-card group relative overflow-hidden rounded-2xl md:rounded-[2rem] bg-gray-200 aspect-square shadow-sm cursor-pointer border border-gray-100";
+            
+            card.innerHTML = `
+                <a href="${fullPath}" class="glightbox block w-full h-full">
+                    <img src="${fullPath}" 
+                         alt="Cricket PEI Action" 
+                         class="h-full w-full object-cover transition-transform duration-700 ease-out"
+                         loading="lazy"
+                         onerror="this.closest('.gallery-item').remove()">
+                    
+                    <div class="overlay absolute inset-0 bg-blue-900/40 opacity-0 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
+                        <div class="bg-white/20 backdrop-blur-xl p-4 md:p-5 rounded-full border border-white/30 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                            <i class="fa-solid fa-magnifying-glass-plus text-white text-xl md:text-2xl"></i>
                         </div>
-                    </a>
-                `;
-                galleryGrid.appendChild(card);
+                    </div>
+                </a>
+            `;
+            galleryGrid.appendChild(card);
+        });
+
+        // Initialize Lightbox
+        const lightbox = GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true,
+            zoomable: true
+        });
+
+        // Trigger Reveal Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                }
             });
+        }, { threshold: 0.05 });
 
-            // Trigger Scroll Animation
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('reveal');
-                    }
-                });
-            }, { threshold: 0.1 });
+        document.querySelectorAll('.gallery-item').forEach(item => observer.observe(item));
+    }
 
-            document.querySelectorAll('.gallery-item').forEach(item => observer.observe(item));
+    // Navbar Toggle
+    document.getElementById('menu-btn').onclick = () => {
+        document.getElementById('nav-links').classList.toggle('hidden');
+    };
 
-            const lightbox = GLightbox({
-                selector: '.glightbox',
-                touchNavigation: true,
-                loop: true,
-                zoomable: true
-            });
-        }
-
-        // Navbar Mobile Toggle
-        document.getElementById('menu-btn').onclick = () => {
-            document.getElementById('nav-links').classList.toggle('hidden');
-        };
-
-        window.addEventListener('DOMContentLoaded', initGallery);
-    </script>
+    window.addEventListener('DOMContentLoaded', initGallery);
+</script>
 </body>
 </html>
