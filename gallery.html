@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Cricket PEI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css">
+    <style>
+        .aspect-square { aspect-ratio: 1 / 1; }
+        
+        /* Smooth Entrance Animation */
+        .gallery-item { 
+            opacity: 0; 
+            transform: translateY(20px); 
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1); 
+        }
+        
+        .gallery-item.reveal { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+
+        /* Hover Effects */
+        .gallery-card:hover img { transform: scale(1.08); }
+        .gallery-card:hover .overlay { opacity: 1; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 selection:bg-blue-100">
+
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-lg shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <img src="./src/logo.jpg" alt="Cricket PEI" class="h-12 w-12 rounded-full object-cover border-2 border-blue-900 transition group-hover:rotate-6">
+                    <span class="font-bold text-xl tracking-tighter text-blue-900 uppercase">Cricket PEI</span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-4 font-semibold text-xs lg:text-sm uppercase tracking-wider">
+                    <a href="index.html" class="px-3 py-2 text-gray-600 hover:text-blue-600 transition">Home</a>
+                    <a href="about.html" class="px-3 py-2 text-gray-600 hover:text-blue-600 transition">Our Story</a>
+                    <a href="board.html" class="px-3 py-2 text-gray-600 hover:text-blue-600 transition">Leadership</a>
+                    <a href="schedule.html" class="px-3 py-2 text-gray-600 hover:text-blue-600 transition">CCL Schedule</a>
+                    <a href="gallery.html" class="px-3 py-2 text-blue-600 border-b-2 border-blue-600">Gallery</a>
+                    <a href="programs.html" class="px-3 py-2 text-gray-600 hover:text-blue-600 transition">Programs</a>
+                    <a href="https://www.facebook.com/p/PEI-Cricket-Association-100057478210038/" target="_blank" class="ml-4 bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-700 transition shadow-lg shadow-blue-200 active:scale-95">Follow Us</a>
+                </div>
+
+                <button id="menu-btn" class="md:hidden text-blue-900 text-2xl p-2 hover:bg-gray-100 rounded-lg transition">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="nav-links" class="hidden md:hidden bg-white border-b border-gray-100 animate-in slide-in-from-top duration-300">
+            <div class="px-4 pt-2 pb-8 space-y-1 flex flex-col font-bold text-gray-800 uppercase text-center tracking-widest">
+                <a href="index.html" class="py-4 border-b border-gray-50">Home</a>
+                <a href="about.html" class="py-4 border-b border-gray-50">Our Story</a>
+                <a href="board.html" class="py-4 border-b border-gray-50">Leadership</a>
+                <a href="schedule.html" class="py-4 border-b border-gray-50">CCL Schedule</a>
+                <a href="gallery.html" class="py-4 border-b border-gray-50 text-blue-600">Gallery</a>
+                <a href="programs.html" class="py-4">Programs</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-40 pb-24 max-w-7xl mx-auto px-4">
+        <header class="text-center mb-20 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+            <span class="text-blue-600 font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Our Visual Journey</span>
+            <h1 class="text-5xl md:text-7xl font-black text-blue-900 mb-6 uppercase tracking-tighter">Match Gallery</h1>
+            <div class="h-1.5 w-24 bg-blue-600 mx-auto rounded-full mb-8"></div>
+            <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
+                Capturing the intensity, the celebrations, and the community spirit of Cricket on Prince Edward Island.
+            </p>
+        </header>
+
+        <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+            </div>
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+    <script>
+        const images = [
+            'IMG_0275.JPG', 'IMG_0277.JPG', 'IMG_0278.JPG', 'IMG_0279.JPG', 'IMG_0280.JPG', 
+            'IMG_0281.JPG', 'IMG_0282.JPG', 'IMG_0283.JPG', 'IMG_0284.JPG', 'IMG_0286.JPG', 
+            'IMG_0287.JPG', 'IMG_0289.JPG', 'IMG_0744.jpg', 'IMG_0910.jpg', 'IMG_1350.jpg', 
+            'IMG_1541.jpg', 'IMG_1663.jpg', 'IMG_1771.jpg', 'IMG_1920.jpg', 'IMG_2424.jpg', 
+            'IMG_2502.JPG', 'IMG_2820.jpg', 'IMG_2821.jpg', 'IMG_2825.jpg', 'IMG_2827.jpg', 
+            'IMG_5825.jpg', 'IMG_5827.jpg', 'IMG_5972.JPG', 'IMG_5982.JPG', 'IMG_5985.JPG', 
+            'IMG_6081.jpg', 'IMG_6098.jpg', 'IMG_6099.jpg', 'IMG_6103.jpg', 'IMG_6358.JPEG', 
+            'IMG_6374.JPEG', 'IMG_6395.JPEG', 'IMG_6405.JPEG', 'IMG_6445.JPEG', 'IMG_6643.JPEG', 
+            'IMG_6678.jpg', 'IMG_6690.jpg', 'IMG_6807.jpg', 'IMG_7169.jpg', 'IMG_7172.jpg', 
+            'IMG_7207.jpg', 'IMG_7219.jpg', 'IMG_7225.jpg', 'IMG_7233.jpg', 'IMG_7237.jpg', 
+            'IMG_7388.jpg', 'IMG_7392.jpg', 'IMG_7396.jpg', 'IMG_7404.jpg', 'IMG_7443.jpg', 
+            'IMG_7592.jpg', 'IMG_7888.jpg', 'IMG_8288.jpg', 'IMG_8299.jpg', 'IMG_8303.jpg', 
+            'IMG_8308.jpg', 'IMG_8314.jpg'
+        ];
+
+        const galleryGrid = document.getElementById('gallery-grid');
+        const basePath = './src/images/gallery/';
+
+        function initGallery() {
+            images.forEach((img, index) => {
+                const card = document.createElement('div');
+                // Added staggering delay in JS
+                card.className = "gallery-item gallery-card group relative overflow-hidden rounded-3xl bg-gray-100 aspect-square shadow-sm cursor-pointer";
+                
+                card.innerHTML = `
+                    <a href="${basePath}${img}" class="glightbox block w-full h-full">
+                        <img src="${basePath}${img}" 
+                             alt="Cricket PEI Action" 
+                             class="h-full w-full object-cover transition-transform duration-700 ease-out"
+                             loading="lazy"
+                             onerror="this.closest('.gallery-item').remove()">
+                        
+                        <div class="overlay absolute inset-0 bg-blue-900/40 opacity-0 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
+                            <div class="bg-white/20 backdrop-blur-xl p-5 rounded-full border border-white/30 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                <i class="fa-solid fa-magnifying-glass-plus text-white text-2xl"></i>
+                            </div>
+                        </div>
+                    </a>
+                `;
+                galleryGrid.appendChild(card);
+            });
+
+            // Trigger Scroll Animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.gallery-item').forEach(item => observer.observe(item));
+
+            const lightbox = GLightbox({
+                selector: '.glightbox',
+                touchNavigation: true,
+                loop: true,
+                openEffect: 'zoom',
+                closeEffect: 'zoom'
+            });
+        }
+
+        // Navbar Mobile Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuBtn.onclick = () => {
+            navLinks.classList.toggle('hidden');
+        };
+
+        window.addEventListener('DOMContentLoaded', initGallery);
+    </script>
+
+    <footer class="bg-gray-900 text-white pt-20 pb-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 border-b border-gray-800 pb-16">
+            
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-2xl font-black mb-4 uppercase tracking-tighter text-white">Cricket <span class="text-blue-500">PEI</span></h3>
+                    <p class="text-gray-400 leading-relaxed max-w-sm">
+                        Promoting Cricket Excellence and Community Growth in Prince Edward Island since 2007. Join the fastest growing sport on the Island.
+                    </p>
+                </div>
+                <div class="space-y-3">
+                    <a href="tel:9023147644" class="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition group">
+                        <i class="fa-solid fa-phone text-blue-500 group-hover:scale-110 transition"></i>
+                        <span class="font-medium">902-314-7644</span>
+                    </a>
+                    <a href="mailto:cricketpei@gmail.com" class="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition group">
+                        <i class="fa-solid fa-envelope text-blue-500 group-hover:scale-110 transition"></i>
+                        <span class="font-medium">cricketpei@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col space-y-4">
+                <h4 class="font-bold text-white uppercase text-xs tracking-[0.3em] mb-2 border-l-2 border-blue-600 pl-3">Quick Links</h4>
+                <nav class="flex flex-col space-y-3">
+                    <a href="about.html" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300">Our Story</a>
+                    <a href="board.html" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300">Leadership</a>
+                    <a href="programs.html" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300">Programs</a>
+                    <a href="gallery.html" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300">Gallery</a>
+                </nav>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white uppercase text-xs tracking-[0.3em] mb-6 border-l-2 border-blue-600 pl-3">Stay Connected</h4>
+                <p class="text-gray-400 text-sm mb-6 leading-relaxed">Follow us for live updates, match highlights, and community news.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://www.facebook.com/p/PEI-Cricket-Association-100057478210038/" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20" title="Facebook">
+                        <i class="fa-brands fa-facebook-f text-white"></i>
+                    </a>
+                    <a href="https://www.instagram.com/cricketpei" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20" title="Instagram">
+                        <i class="fa-brands fa-instagram text-white"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@cricketpei" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20" title="YouTube">
+                        <i class="fa-brands fa-youtube text-white"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-gray-500 text-xs font-medium uppercase tracking-widest text-center md:text-left">
+                © 2026 PEI Cricket Association. All Rights Reserved.
+            </div>
+            <div class="text-gray-600 text-[10px] uppercase tracking-[0.2em] font-bold">
+                Designed for the Island • Developed by <span class="text-gray-400">moshr</span>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
