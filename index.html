@@ -6,7 +6,20 @@
     <title>Cricket PEI | Official Home of Island Cricket</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="./src/css/style.css">
+    <style>
+        /* Fixed Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* Works with the doubled content for a seamless loop */
+        }
+        .animate-marquee {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+        .pause-on-hover:hover {
+            animation-play-state: paused;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans">
 
@@ -33,139 +46,131 @@
                 </button>
             </div>
         </div>
-        
-        <div id="nav-links" class="hidden md:hidden bg-white border-b border-gray-100 shadow-inner">
-            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col font-bold text-gray-800 uppercase text-center">
-                <a href="index.html" class="py-4 border-b">Home</a>
-                <a href="about.html" class="py-4 border-b">Our Story</a>
-                <a href="board.html" class="py-4 border-b">Leadership</a>
-                <a href="schedule.html" class="py-4 border-b">CCL Schedule</a>
-                <a href="gallery.html" class="py-4 border-b ">Gallery</a>
-                <a href="programs.html" class="py-4">Programs</a>
-            </div>
-        </div>
     </nav>
 
-    <header class="relative h-screen flex items-center justify-center text-white pt-20">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80" alt="Cricket Field" class="w-full h-full object-cover brightness-50">
+    <div id="news-banner" class="hidden fixed top-20 w-full z-40 bg-blue-700 text-white py-2 overflow-hidden border-b border-blue-800 shadow-lg">
+        <div class="flex items-center">
+            <div class="bg-yellow-400 text-blue-900 px-4 py-1 font-black text-xs uppercase tracking-tighter z-50 shadow-r">LIVE</div>
+            <div class="relative flex-1 overflow-hidden whitespace-nowrap">
+                <div id="news-content" class="animate-marquee pause-on-hover inline-block font-bold text-sm tracking-wide">
+                    </div>
+            </div>
         </div>
-        <div class="relative z-10 text-center px-4 max-w-4xl">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg uppercase tracking-tighter">
-                Cricket on the <span class="text-blue-400">Island</span>
+    </div>
+
+    <header id="hero" class="relative h-[90vh] flex items-center justify-center text-white transition-all duration-500">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80" alt="Cricket Field" class="w-full h-full object-cover brightness-[0.4]">
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl pt-20">
+            <h1 class="text-6xl md:text-8xl font-black mb-6 drop-shadow-2xl uppercase tracking-tighter">
+                Cricket <span class="text-blue-400 underline decoration-yellow-400 underline-offset-8">PEI</span>
             </h1>
-            <p class="text-lg md:text-2xl mb-10 text-gray-200">Joining 300+ players in the heart of the Maritimes. Experience the heritage of Prince Edward Island cricket.</p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="programs.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition shadow-xl">Browse Programs</a>
-                <a href="about.html" class="bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/20 text-white px-8 py-4 rounded-lg font-bold text-lg transition">Read Our Story</a>
+            <p class="text-xl md:text-2xl mb-10 text-gray-200 font-medium">Join 300+ players in the heart of the Maritimes.</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="#membership" class="bg-yellow-400 text-blue-900 hover:bg-white px-10 py-4 rounded-full font-black text-lg transition-all shadow-xl active:scale-95">2026 REGISTRATION</a>
+                <a href="programs.html" class="bg-white/10 backdrop-blur-md border border-white/30 hover:bg-white/20 text-white px-10 py-4 rounded-full font-bold text-lg transition">PROGRAMS</a>
             </div>
         </div>
     </header>
 
-    <section class="bg-blue-900 py-10">
+    <section class="bg-blue-900 py-12 relative z-10 -mt-10 mx-4 md:mx-auto max-w-7xl rounded-3xl shadow-2xl">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
-            <div>
-                <div class="text-4xl font-bold">300+</div>
-                <div class="text-blue-300 uppercase text-sm tracking-widest">Active Players</div>
-            </div>
-            <div>
-                <div class="text-4xl font-bold">15+</div>
-                <div class="text-blue-300 uppercase text-sm tracking-widest">Years of History</div>
-            </div>
-            <div>
-                <div class="text-4xl font-bold">2</div>
-                <div class="text-blue-300 uppercase text-sm tracking-widest">Major Grounds</div>
-            </div>
-            <div>
-                <div class="text-4xl font-bold">2026</div>
-                <div class="text-blue-300 uppercase text-sm tracking-widest">Summer Season</div>
-            </div>
+            <div><div class="text-4xl font-black">300+</div><div class="text-blue-300 uppercase text-[10px] tracking-widest font-bold">Active Players</div></div>
+            <div><div class="text-4xl font-black">15+</div><div class="text-blue-300 uppercase text-[10px] tracking-widest font-bold">Years of History</div></div>
+            <div><div class="text-4xl font-black">2</div><div class="text-blue-300 uppercase text-[10px] tracking-widest font-bold">Major Grounds</div></div>
+            <div><div class="text-4xl font-black">2026</div><div class="text-blue-300 uppercase text-[10px] tracking-widest font-bold">Summer Season</div></div>
         </div>
     </section>
 
-    <section class="py-24 px-4 bg-white">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-4xl font-bold text-blue-900 mb-6 uppercase">A Growing Community</h2>
-                <p class="text-gray-600 mb-6 leading-relaxed">
-                    From its revival in 2007 to the opening of the Provincial Ground in 2009, Cricket PEI has focused on diversity, inclusion, and the joy of the game. Meet the team leading the charge and learn about our journey from a few enthusiasts to 300+ members.
-                </p>
-                <div class="flex gap-4">
-                    <a href="about.html" class="text-blue-600 font-bold hover:underline">Full History &rarr;</a>
-                    <a href="board.html" class="text-blue-600 font-bold hover:underline">Meet the Board &rarr;</a>
-                </div>
+    <section id="membership" class="py-32 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-black text-blue-600 uppercase tracking-[0.4em] mb-4">Official Enrollment</h2>
+                <p class="text-5xl md:text-6xl font-black text-blue-900 uppercase tracking-tighter">2026 Membership</p>
             </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="h-48 bg-gray-100 rounded-2xl overflow-hidden shadow-md">
-                    <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
-                </div>
-                <div class="h-48 bg-gray-100 rounded-2xl overflow-hidden shadow-md mt-6">
-                    <img src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d?auto=format&fit=crop&q=80" class="w-full h-full object-cover">
+            
+            <div class="bg-white border border-gray-200 rounded-[3rem] p-1 shadow-2xl overflow-hidden">
+                <div class="grid md:grid-cols-2 gap-0">
+                    <div class="p-12 md:p-20 flex flex-col justify-center bg-white">
+                        <h3 class="text-3xl font-black text-blue-900 mb-6 uppercase">Ready for the Pitch?</h3>
+                        <p class="text-gray-600 mb-8 text-lg leading-relaxed">
+                            Registration for the 2026 Season is now officially open. Join our community of cricketers across Prince Edward Island. All skill levels, from beginners to veterans, are welcome.
+                        </p>
+                        <div class="space-y-4 mb-10 text-gray-700">
+                            <div class="flex items-center gap-4"><div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600"><i class="fa-solid fa-check text-xs"></i></div> Full Season League Play</div>
+                            <div class="flex items-center gap-4"><div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600"><i class="fa-solid fa-check text-xs"></i></div> Coaching & Equipment Access</div>
+                            <div class="flex items-center gap-4"><div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600"><i class="fa-solid fa-check text-xs"></i></div> Official 2026 Membership Card</div>
+                        </div>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeULzCAE38hfVo3_wEAjflkHBK3uLeL6M88QucaGU-PWAoD9A/viewform?usp=send_form" 
+                           target="_blank" 
+                           class="bg-blue-600 text-white hover:bg-blue-700 px-12 py-5 rounded-2xl font-black text-xl text-center transition-all shadow-xl shadow-blue-200 uppercase tracking-widest active:scale-95">
+                            Open Application
+                        </a>
+                    </div>
+                    <div class="bg-blue-900 relative min-h-[400px]">
+                        <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80" alt="Action Shot" class="w-full h-full object-cover opacity-60">
+                        <div class="absolute inset-0 flex items-center justify-center p-12">
+                            <div class="text-white text-center">
+                                <span class="block text-8xl font-black opacity-20 mb-2">2026</span>
+                                <p class="text-xl font-bold uppercase tracking-[0.2em] bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">Secure Your Spot</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="bg-gray-900 text-white pt-20 pb-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 border-b border-gray-800 pb-16">
-            
-            <div class="space-y-6">
-                <div>
-                    <h3 class="text-2xl font-black mb-4 uppercase tracking-tighter text-white">Cricket <span class="text-blue-500">PEI</span></h3>
-                    <p class="text-gray-400 leading-relaxed max-w-sm">
-                        Promoting Cricket Excellence and Community Growth in Prince Edward Island since 2007. Join the fastest growing sport on the Island.
-                    </p>
-                </div>
-                <div class="space-y-3">
-                    <a href="tel:9023147644" class="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition group">
-                        <i class="fa-solid fa-phone text-blue-500 group-hover:scale-110 transition"></i>
-                        <span class="font-medium">902-314-7644</span>
-                    </a>
-                    <a href="mailto:cricketpei@gmail.com" class="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition group">
-                        <i class="fa-solid fa-envelope text-blue-500 group-hover:scale-110 transition"></i>
-                        <span class="font-medium">cricketpei@gmail.com</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="flex flex-col space-y-4">
-                <h4 class="font-bold text-white uppercase text-xs tracking-[0.3em] mb-2 border-l-2 border-blue-600 pl-3">Quick Links</h4>
-                <nav class="flex flex-col space-y-3">
-                    <a href="about.html" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300">Our Story</a>
-                    <a href="board.html" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300">Leadership</a>
-                    <a href="programs.html" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300">Programs</a>
-                    <a href="gallery.html" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300">Gallery</a>
-                </nav>
-            </div>
-
-            <div>
-                <h4 class="font-bold text-white uppercase text-xs tracking-[0.3em] mb-6 border-l-2 border-blue-600 pl-3">Stay Connected</h4>
-                <p class="text-gray-400 text-sm mb-6 leading-relaxed">Follow us for live updates, match highlights, and community news.</p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://www.facebook.com/p/PEI-Cricket-Association-100057478210038/" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20" title="Facebook">
-                        <i class="fa-brands fa-facebook-f text-white"></i>
-                    </a>
-                    <a href="https://www.instagram.com/cricketpei" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20" title="Instagram">
-                        <i class="fa-brands fa-instagram text-white"></i>
-                    </a>
-                    <a href="https://www.youtube.com/@cricketpei" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20" title="YouTube">
-                        <i class="fa-brands fa-youtube text-white"></i>
-                    </a>
-                </div>
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="text-gray-500 text-[10px] uppercase tracking-[0.4em] font-bold">
+                © 2026 PEI Cricket Association • Charlottetown, PEI
             </div>
         </div>
+    </footer>
 
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-gray-500 text-xs font-medium uppercase tracking-widest text-center md:text-left">
-                © 2026 PEI Cricket Association. All Rights Reserved.
-            </div>
-            <div class="text-gray-600 text-[10px] uppercase tracking-[0.2em] font-bold">
-                Designed for the Island • Developed by <span class="text-gray-400">moshr</span>
-            </div>
-        </div>
-    </div>
-</footer>
-    <script src="./src/js/main.js"></script>
+    <script>
+        // ROBUST NEWS BANNER LOGIC
+const SHEET_CSV_URL ='https://docs.google.com/spreadsheets/d/e/2PACX-1vT9Xj8AYl3ce1pG2nDrNKvFscKzFWvsBPBq6kJw91_4BYdNR4WbfwcwLNcEjBGek-XqvibbWLA_hTbf/pub?gid=301464280&single=true&output=csv';
+        async function loadNews() {
+            const newsEl = document.getElementById('news-content');
+            const bannerEl = document.getElementById('news-banner');
+            const heroEl = document.getElementById('hero');
+
+            try {
+                const response = await fetch(SHEET_CSV_URL);
+                if (!response.ok) throw new Error('Network fail');
+                
+                const data = await response.text();
+                // Regex to handle CSV rows even if they have commas inside quotes
+                const rows = data.split(/\r?\n/).slice(1); 
+                
+                let newsString = "";
+                rows.forEach(row => {
+                    const firstColumn = row.split(',')[0].replace(/^"|"$/g, ''); // Remove quotes
+                    if (firstColumn.trim()) {
+                        newsString += ` ${firstColumn} &nbsp;&nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;&nbsp; `;
+                    }
+                });
+
+                if (newsString.length > 5) {
+                    // Double it for seamless scrolling
+                    newsEl.innerHTML = `<span>${newsString}</span><span>${newsString}</span>`;
+                    bannerEl.classList.remove('hidden');
+                    heroEl.style.paddingTop = '100px'; 
+                }
+            } catch (err) {
+                console.error("Banner feed failed to load:", err);
+            }
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('menu-btn').onclick = () => {
+            document.getElementById('nav-links').classList.toggle('hidden');
+        };
+
+        window.onload = loadNews;
+    </script>
 </body>
 </html>
