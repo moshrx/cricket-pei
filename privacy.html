@@ -9,22 +9,38 @@
 </head>
 <body class="bg-gray-50 font-sans text-gray-900">
 
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+   <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <a href="index.html" class="flex items-center gap-3 group">
-                    <img src="./src/logo.jpg" alt="Cricket PEI" class="h-12 w-12 rounded-full object-cover border-2 border-blue-900 transition group-hover:scale-105">
-                    <span class="font-bold text-xl tracking-tighter text-blue-900 uppercase">Cricket PEI</span>
+            <div class="flex justify-between h-16 md:h-20 items-center">
+                <a href="index.html" class="flex items-center gap-2 md:gap-3 group">
+                    <img src="./src/logo.jpg" alt="Cricket PEI" class="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover border-2 border-blue-900 transition group-hover:scale-105">
+                    <span class="font-bold text-lg md:text-xl tracking-tighter text-blue-900 uppercase">Cricket PEI</span>
                 </a>
-                <div class="hidden md:flex items-center space-x-8 font-semibold text-xs uppercase tracking-wider text-gray-700">
+
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8 font-semibold text-xs uppercase tracking-wider text-gray-700">
                     <a href="index.html" class="hover:text-blue-600 transition">Home</a>
                     <a href="about.html" class="hover:text-blue-600 transition">Our Story</a>
+                    <a href="board.html" class="hover:text-blue-600 transition">Leadership</a>
+                    <a href="schedule.html" class="hover:text-blue-600 transition">CCL Schedule</a>
+                    <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
                     <a href="programs.html" class="hover:text-blue-600 transition">Programs</a>
-                    <a href="https://www.facebook.com/p/PEI-Cricket-Association-100057478210038/" target="_blank" class="bg-blue-600 text-white px-5 py-2.5 rounded-full hover:bg-blue-700 transition shadow-md">Follow Us</a>
                 </div>
+
+                <button id="menu-btn" class="md:hidden text-blue-900 text-xl p-2">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
             </div>
         </div>
+         <div id="nav-links" class="hidden md:hidden bg-white border-b border-gray-100 py-6 px-6 space-y-4 font-bold uppercase text-xs tracking-widest text-center shadow-inner">
+            <a href="index.html" class="block py-2 border-b border-gray-50">Home</a>
+            <a href="about.html" class="block py-2 border-b border-gray-50">Our Story</a>
+            <a href="board.html" class="block py-2 border-b border-gray-50">Leadership</a>
+            <a href="schedule.html" class="block py-2 border-b border-gray-50">CCL Schedule</a>
+            <a href="gallery.html" class="block py-2 border-b border-gray-50">Gallery</a>
+            <a href="programs.html" class="block py-2 border-b border-gray-50">Programs</a>
+        </div>
     </nav>
+
 
     <main class="pt-32 pb-20 max-w-4xl mx-auto px-6">
         <div class="bg-white rounded-[2.5rem] p-8 md:p-16 shadow-xl border border-gray-100">
@@ -162,5 +178,21 @@
         </div>
     </footer>
 
+    <script>
+    // Mobile Menu Toggle Logic
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking outside (Optional but recommended)
+    document.addEventListener('click', (e) => {
+        if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+            navLinks.classList.add('hidden');
+        }
+    });
+</script>
 </body>
 </html>
