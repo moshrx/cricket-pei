@@ -1,0 +1,55 @@
+<nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 md:h-20 items-center">
+            <a href="index.html" class="flex items-center gap-2 md:gap-3 group">
+                <img src="./src/logo.jpg" alt="Cricket PEI" class="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover border-2 border-blue-900 transition group-hover:scale-105">
+                <span class="font-bold text-lg md:text-xl tracking-tighter text-blue-900 uppercase">Cricket PEI</span>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-6 lg:space-x-8 font-semibold text-xs uppercase tracking-wider text-gray-700">
+                <a href="index.html" class="hover:text-blue-600 transition" data-current="home">Home</a>
+                <a href="about.html" class="hover:text-blue-600 transition" data-current="about">Our Story</a>
+                <a href="board.html" class="hover:text-blue-600 transition" data-current="board">Leadership</a>
+                <a href="schedule.html" class="hover:text-blue-600 transition" data-current="schedule">CCL Schedule</a>
+                <a href="gallery.html" class="hover:text-blue-600 transition" data-current="gallery">Gallery</a>
+                <a href="programs.html" class="hover:text-blue-600 transition" data-current="programs">Programs</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-blue-900 text-xl p-2">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </div>
+    <div id="nav-links" class="hidden md:hidden bg-white border-b border-gray-100 py-6 px-6 space-y-4 font-bold uppercase text-xs tracking-widest text-center shadow-inner">
+        <a href="index.html" class="block py-2 border-b border-gray-50" data-current="home">Home</a>
+        <a href="about.html" class="block py-2 border-b border-gray-50" data-current="about">Our Story</a>
+        <a href="board.html" class="block py-2 border-b border-gray-50" data-current="board">Leadership</a>
+        <a href="schedule.html" class="block py-2 border-b border-gray-50" data-current="schedule">CCL Schedule</a>
+        <a href="gallery.html" class="block py-2 border-b border-gray-50" data-current="gallery">Gallery</a>
+        <a href="programs.html" class="block py-2 border-b border-gray-50" data-current="programs">Programs</a>
+    </div>
+</nav>
+
+<script>
+    // Highlight current page in navigation
+    function setActiveNav() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const pageName = currentPage.replace('.html', '');
+
+        document.querySelectorAll('[data-current]').forEach(link => {
+            if (link.getAttribute('data-current') === pageName) {
+                link.classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
+            } else {
+                link.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
+            }
+        });
+    }
+
+    // Toggle mobile menu
+    document.getElementById('menu-btn').onclick = () => {
+        document.getElementById('nav-links').classList.toggle('hidden');
+    };
+
+    // Set active on page load
+    document.addEventListener('DOMContentLoaded', setActiveNav);
+</script>
