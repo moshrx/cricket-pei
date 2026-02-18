@@ -6,21 +6,38 @@
                 <span class="font-bold text-lg md:text-xl tracking-tighter text-blue-900 uppercase">Cricket PEI</span>
             </a>
 
-            <div class="hidden md:flex items-center space-x-6 lg:space-x-8 font-semibold text-xs uppercase tracking-wider text-gray-700">
+            <div class="hidden md:flex items-center space-x-3 lg:space-x-5 font-semibold text-xs uppercase tracking-wider text-gray-700 min-w-0">
                 <a href="index.html" class="hover:text-blue-600 transition" data-current="home">Home</a>
                 <a href="about.html" class="hover:text-blue-600 transition" data-current="about">Our Story</a>
                 <a href="board.html" class="hover:text-blue-600 transition" data-current="board">Leadership</a>
                 <a href="schedule.html" class="hover:text-blue-600 transition" data-current="schedule">CCL Schedule</a>
                 <a href="gallery.html" class="hover:text-blue-600 transition" data-current="gallery">Gallery</a>
                 <a href="programs.html" class="hover:text-blue-600 transition" data-current="programs">Programs</a>
-                <a href="https://cricketcanada.org/" target="_blank" class="flex items-center gap-2 px-3 py-1.5 rounded-lg hover:opacity-80 transition group" title="Cricket Canada">
-                    <img src="./src/images/bg-img/cricketcanada.webp" alt="Cricket Canada" class="h-12 w-auto group-hover:scale-110 transition">
+                <a href="https://cricclubs.com/CAPEICricket" target="_blank" class="flex items-center gap-1.5 px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wider rounded-full transition shadow-sm">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                    </span>
+                    Live Scores
+                </a>
+                <a href="https://www.youtube.com/@cricketpei/streams" target="_blank" class="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-full font-bold text-[10px] uppercase tracking-widest transition shadow-sm">
+                    <i class="fa-brands fa-youtube text-sm"></i>
+                    <span class="hidden lg:inline">Watch Live</span>
+                </a>
+                <a href="https://cricketcanada.org/" target="_blank" class="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:opacity-80 transition group" title="Cricket Canada">
+                    <img src="./src/images/bg-img/cricketcanada.webp" alt="Cricket Canada" class="h-8 w-auto group-hover:scale-110 transition">
                 </a>
             </div>
 
-            <button id="menu-btn" class="md:hidden text-blue-900 text-xl p-2">
-                <i class="fa-solid fa-bars-staggered"></i>
-            </button>
+            <div class="flex items-center gap-2 shrink-0">
+                <a href="https://cricclubs.com/CAPEICricket" target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white text-xs font-bold uppercase tracking-wider rounded-full transition whitespace-nowrap">
+                    <i class="fa-solid fa-cricket-bat-ball"></i>
+                    Scores
+                </a>
+                <button id="menu-btn" class="md:hidden text-blue-900 text-xl p-2">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
         </div>
     </div>
     <div id="nav-links" class="hidden md:hidden bg-white border-b border-gray-100 py-6 px-6 space-y-4 font-bold uppercase text-xs tracking-widest text-center shadow-inner">
@@ -30,8 +47,23 @@
         <a href="schedule.html" class="block py-2 border-b border-gray-50" data-current="schedule">CCL Schedule</a>
         <a href="gallery.html" class="block py-2 border-b border-gray-50" data-current="gallery">Gallery</a>
         <a href="programs.html" class="block py-2 border-b border-gray-50" data-current="programs">Programs</a>
+        <a href="https://cricclubs.com/CAPEICricket" target="_blank" class="flex items-center justify-center gap-2 py-3 bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wider rounded-full transition mx-4">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+            </span>
+            Live Scores
+        </a>
+        <a href="https://www.youtube.com/@cricketpei/streams" target="_blank" class="flex items-center justify-center gap-2 mx-auto my-1 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest transition shadow-sm">
+            <i class="fa-brands fa-youtube text-sm"></i>
+            Watch Live Game
+        </a>
         <a href="https://cricketcanada.org/" target="_blank" class="flex items-center justify-center py-3 border-b border-gray-50 hover:opacity-80 transition" title="Cricket Canada">
-            <img src="./src/images/bg-img/cricketcanada.webp" alt="Cricket Canada" class="h-14 w-auto">
+            <img src="./src/images/bg-img/cricketcanada.webp" alt="Cricket Canada" class="h-12 w-auto">
+        </a>
+        <a href="https://cricclubs.com/CAPEICricket" target="_blank" class="flex items-center justify-center gap-2 py-3 border-2 border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white text-xs font-bold uppercase tracking-wider rounded-full transition mx-4">
+            <i class="fa-solid fa-cricket-bat-ball"></i>
+            Scores
         </a>
     </div>
 </nav>
@@ -39,16 +71,30 @@
 <script>
     // Highlight current page in navigation
     function setActiveNav() {
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        const pageName = currentPage.replace('.html', '');
+        const pageName = (window.location.pathname.split('/').pop() || 'index.html').replace('.html', '');
 
-        document.querySelectorAll('[data-current]').forEach(link => {
-            if (link.getAttribute('data-current') === pageName) {
-                link.classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
-            } else {
-                link.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
-            }
-        });
+        // Desktop navigation
+        const desktopNavContainer = document.querySelector('.hidden.md\\:flex');
+        if (desktopNavContainer) {
+            desktopNavContainer.querySelectorAll('[data-current]').forEach(link => {
+                if (link.getAttribute('data-current') === pageName) {
+                    link.classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
+                } else {
+                    link.classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
+                }
+            });
+        }
+
+        // Mobile navigation
+        const mobileNavContainer = document.getElementById('nav-links');
+        if (mobileNavContainer) {
+            mobileNavContainer.querySelectorAll('[data-current]').forEach(link => {
+                if (link.getAttribute('data-current') === pageName) {
+                    link.classList.add('text-blue-600');
+                    link.classList.remove('border-b', 'border-gray-50');
+                }
+            });
+        }
     }
 
     // Toggle mobile menu

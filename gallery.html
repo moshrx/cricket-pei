@@ -29,6 +29,8 @@
     <link rel="apple-touch-icon" href="./src/logo.jpg">
     <link rel="canonical" href="https://cricketpei.com/gallery.html">
     <title>Gallery | Cricket PEI</title>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css">
@@ -62,13 +64,24 @@
                     <span class="font-bold text-lg md:text-xl tracking-tighter text-blue-900 uppercase">Cricket PEI</span>
                 </a>
 
-                <div class="hidden md:flex items-center space-x-6 lg:space-x-8 font-semibold text-xs uppercase tracking-wider text-gray-700">
+                <div class="hidden md:flex items-center space-x-2 lg:space-x-4 font-semibold text-xs uppercase tracking-wider text-gray-700">
                     <a href="index.html" class="hover:text-blue-600 transition">Home</a>
                     <a href="about.html" class="hover:text-blue-600 transition">Our Story</a>
                     <a href="board.html" class="hover:text-blue-600 transition">Leadership</a>
                     <a href="schedule.html" class="hover:text-blue-600 transition">CCL Schedule</a>
                     <a href="gallery.html" class="text-blue-600 border-b-2 border-blue-600">Gallery</a>
                     <a href="programs.html" class="hover:text-blue-600 transition">Programs</a>
+                    <a href="https://cricclubs.com/CAPEICricket" target="_blank" class="flex items-center gap-1.5 px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wider rounded-full transition shadow-sm">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                        </span>
+                        Live Scores
+                    </a>
+                    <a href="https://www.youtube.com/@cricketpei/streams" target="_blank" class="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-full font-bold text-[10px] uppercase tracking-widest transition shadow-sm">
+                        <i class="fa-brands fa-youtube text-sm"></i>
+                        <span class="hidden lg:inline">Watch Live</span>
+                    </a>
                     <a href="https://cricketcanada.org/" target="_blank" class="flex items-center gap-2 px-2.5 py-1 rounded-lg hover:opacity-80 transition group" title="Cricket Canada">
                         <img src="./src/images/bg-img/cricketcanada.webp" alt="Cricket Canada" class="h-12 w-auto group-hover:scale-110 transition">
                     </a>
@@ -79,13 +92,24 @@
                 </button>
             </div>
         </div>
-        <div id="nav-links" class="hidden md:hidden bg-white border-b border-gray-100 py-6 px-6 space-y-4 font-bold uppercase text-xs tracking-widest text-center shadow-inner">
+        <div id="nav-links" class="hidden md:hidden bg-white border-b border-gray-100 py-6 px-6 space-y-4 font-bold uppercase text-xs tracking-widest text-center shadow-inner max-h-screen overflow-y-auto">
             <a href="index.html" class="block py-2 border-b border-gray-50">Home</a>
             <a href="about.html" class="block py-2 border-b border-gray-50">Our Story</a>
             <a href="board.html" class="block py-2 border-b border-gray-50">Leadership</a>
             <a href="schedule.html" class="block py-2 border-b border-gray-50">CCL Schedule</a>
             <a href="gallery.html" class="block py-2 text-blue-600">Gallery</a>
             <a href="programs.html" class="block py-2 border-b border-gray-50">Programs</a>
+            <a href="https://cricclubs.com/CAPEICricket" target="_blank" class="flex items-center justify-center gap-2 mx-auto my-1 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest transition shadow-sm">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                </span>
+                Live Scores
+            </a>
+            <a href="https://www.youtube.com/@cricketpei/streams" target="_blank" class="flex items-center justify-center gap-2 mx-auto my-1 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest transition shadow-sm">
+                <i class="fa-brands fa-youtube text-sm"></i>
+                Watch Live Game
+            </a>
             <a href="https://cricketcanada.org/" target="_blank" class="flex items-center justify-center py-3 border-b border-gray-50 hover:opacity-80 transition" title="Cricket Canada">
                 <img src="./src/images/bg-img/cricketcanada.webp" alt="Cricket Canada" class="h-14 w-auto">
             </a>
@@ -144,18 +168,32 @@
                     <h4 class="font-bold text-white uppercase text-xs tracking-[0.3em] mb-6 border-l-2 border-blue-600 pl-3">Stay Connected</h4>
                     <p class="text-gray-400 text-sm mb-6 leading-relaxed">Follow us for live updates, match highlights, and community news.</p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="https://www.facebook.com/p/PEI-Cricket-Association-100057478210038/" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20" title="Facebook">
-                            <i class="fa-brands fa-facebook-f text-white"></i>
+                        <a href="https://www.facebook.com/p/PEI-Cricket-Association-100057478210038/" target="_blank" aria-label="Visit Cricket PEI on Facebook" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20">
+                            <i class="fa-brands fa-facebook-f text-white" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.instagram.com/cricketpei" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20" title="Instagram">
-                            <i class="fa-brands fa-instagram text-white"></i>
+                        <a href="https://www.instagram.com/cricketpei" target="_blank" aria-label="Visit Cricket PEI on Instagram" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20">
+                            <i class="fa-brands fa-instagram text-white" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.youtube.com/@cricketpei" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20" title="YouTube">
-                            <i class="fa-brands fa-youtube text-white"></i>
+                        <a href="https://www.youtube.com/@cricketpei" target="_blank" aria-label="Visit Cricket PEI on YouTube" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20">
+                            <i class="fa-brands fa-youtube text-white" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
             </div>
+        <div class="mb-14">
+            <h4 class="font-bold text-white uppercase text-xs tracking-[0.3em] mb-6 border-l-2 border-blue-600 pl-3">Our Partners</h4>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="bg-white rounded-xl p-4 h-24 flex items-center justify-center"><img src="src/images/sponsor/sponser1.jpg" alt="Partner 1" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 h-24 flex items-center justify-center"><img src="src/images/sponsor/sponser2.jpg" alt="Partner 2" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 h-24 flex items-center justify-center"><img src="src/images/sponsor/sponser3.jpg" alt="Partner 3" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 h-24 flex items-center justify-center"><img src="src/images/sponsor/sponser4.jpg" alt="Partner 4" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 h-24 flex items-center justify-center"><img src="src/images/sponsor/sponser5.jpg" alt="Partner 5" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 h-24 flex items-center justify-center"><img src="src/images/sponsor/sponser6.jpg" alt="Partner 6" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 h-24 flex items-center justify-center"><img src="src/images/sponsor/sponser7.jpg" alt="Partner 7" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 h-24 flex items-center justify-center"><img src="src/images/sponsor/sponser8.jpg" alt="Partner 8" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-xl p-4 h-24 flex items-center justify-center"><img src="src/images/sponsor/sponser9.jpg" alt="Partner 9" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain"></div>
+            </div>
+        </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="text-gray-500 text-xs font-medium uppercase tracking-widest text-center md:text-left">
@@ -174,33 +212,64 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
 <script>
-    // List of manually named files
-    const manualImages = [
-        'IMG_0275.JPG', 'IMG_0277.JPG', 'IMG_0278.JPG', 'IMG_0279.JPG', 'IMG_0280.JPG',
-        'IMG_0281.JPG', 'IMG_0282.JPG', 'IMG_0283.JPG', 'IMG_0284.JPG', 'IMG_0286.JPG',
-        'IMG_0287.JPG', 'IMG_0289.JPG', 'IMG_0744.jpg', 'IMG_0910.jpg', 'IMG_1350.jpg',
-        'IMG_1541.jpg', 'IMG_1663.jpg', 'IMG_1771.jpg', 'IMG_1920.jpg', 'IMG_2424.jpg',
-        'IMG_2502.JPG', 'IMG_2820.jpg', 'IMG_2821.jpg', 'IMG_2825.jpg', 'IMG_2827.jpg',
-        'IMG_5825.jpg', 'IMG_5827.jpg', 'IMG_5972.JPG', 'IMG_5982.JPG', 'IMG_5985.JPG',
-        'IMG_6081.jpg', 'IMG_6098.jpg', 'IMG_6099.jpg', 'IMG_6103.jpg', 'IMG_6358.JPEG',
-        'IMG_6374.JPEG', 'IMG_6395.JPEG', 'IMG_6405.JPEG', 'IMG_6445.JPEG', 'IMG_6643.JPEG',
-        'IMG_6678.jpg', 'IMG_6690.jpg', 'IMG_6807.jpg', 'IMG_7169.jpg', 'IMG_7172.jpg',
-        'IMG_7207.jpg', 'IMG_7219.jpg', 'IMG_7225.jpg', 'IMG_7233.jpg', 'IMG_7237.jpg',
-        'IMG_7388.jpg', 'IMG_7392.jpg', 'IMG_7396.jpg', 'IMG_7404.jpg', 'IMG_7443.jpg',
-        'IMG_7592.jpg', 'IMG_7888.jpg', 'IMG_8288.jpg', 'IMG_8299.jpg', 'IMG_8303.jpg',
-        'IMG_8308.jpg', 'IMG_8314.jpg'
+    const allImages = [
+        'IMG_0275.JPG', 'IMG_0276.JPG', 'IMG_0277.JPG', 'IMG_0278.JPG', 'IMG_0279.JPG',
+        'IMG_0280.JPG', 'IMG_0281.JPG', 'IMG_0282.JPG', 'IMG_0283.JPG', 'IMG_0284.JPG',
+        'IMG_0286.JPG', 'IMG_0287.JPG', 'IMG_0289.JPG', 'IMG_0695.jpg', 'IMG_0705.jpg',
+        'IMG_0744.jpg', 'IMG_0910.jpg', 'IMG_1350.jpg', 'IMG_1541.jpg', 'IMG_1663.jpg',
+        'IMG_1771.jpg', 'IMG_1920.jpg', 'IMG_2424.jpg', 'IMG_2502.JPG', 'IMG_2820.jpg',
+        'IMG_2821.jpg', 'IMG_2825.jpg', 'IMG_2827.jpg', 'IMG_5825.jpg', 'IMG_5827.jpg',
+        'IMG_5972.JPG', 'IMG_5982.JPG', 'IMG_5985.JPG', 'IMG_6081.jpg', 'IMG_6098.jpg',
+        'IMG_6099.jpg', 'IMG_6103.jpg', 'IMG_6358.JPEG', 'IMG_6374.JPEG', 'IMG_6395.JPEG',
+        'IMG_6405.JPEG', 'IMG_6445.JPEG', 'IMG_6643.JPEG', 'IMG_6678.jpg', 'IMG_6690.jpg',
+        'IMG_6807.jpg', 'IMG_7082.jpg', 'IMG_7169.jpg', 'IMG_7172.jpg', 'IMG_7207.jpg',
+        'IMG_7219.jpg', 'IMG_7225.jpg', 'IMG_7233.jpg', 'IMG_7237.jpg', 'IMG_7388.jpg',
+        'IMG_7392.jpg', 'IMG_7396.jpg', 'IMG_7404.jpg', 'IMG_7443.jpg', 'IMG_7592.jpg',
+        'IMG_7888.jpg', 'IMG_8288.jpg', 'IMG_8299.jpg', 'IMG_8303.jpg', 'IMG_8308.jpg',
+        'IMG_8314.jpg',
+        'gallery1.JPG', 'gallery2.JPG', 'gallery3.JPG', 'gallery4.JPG', 'gallery5.JPG',
+        'gallery6.JPG', 'gallery7.JPG', 'gallery8.JPG', 'gallery9.JPG', 'gallery10.JPG',
+        'gallery11.JPG', 'gallery12.JPG', 'gallery13.JPG', 'gallery14.JPG', 'gallery15.JPG',
+        'gallery16.JPG', 'gallery17.JPG', 'gallery18.JPG', 'gallery19.JPG', 'gallery20.JPG',
+        'gallery21.JPG', 'gallery22.JPG', 'gallery23.JPG', 'gallery24.JPG', 'gallery25.JPG',
+        'gallery26.JPG', 'gallery27.JPG', 'gallery28.JPG', 'gallery29.JPG', 'gallery30.JPG',
+        'gallery31.JPG', 'gallery32.JPG', 'gallery33.JPG', 'gallery34.JPG', 'gallery35.JPG',
+        'gallery36.JPG', 'gallery37.JPG', 'gallery38.JPG', 'gallery39.JPG', 'gallery40.JPG',
+        'gallery41.JPG', 'gallery42.JPG', 'gallery43.JPG', 'gallery44.JPG', 'gallery45.JPG',
+        'gallery46.JPG', 'gallery47.JPG', 'gallery48.JPG', 'gallery49.JPG', 'gallery50.JPG',
+        'gallery51.JPG', 'gallery52.JPG', 'gallery53.JPG', 'gallery54.JPG', 'gallery55.JPG',
+        'gallery56.JPG', 'gallery57.JPG', 'gallery58.JPG', 'gallery59.JPG', 'gallery60.JPG',
+        'gallery61.JPG',
+        'img62.JPG', 'img63.JPG', 'img64.JPG', 'img65.JPG', 'img66.JPG',
+        'img67.JPG', 'img68.JPG', 'img69.JPG', 'img70.JPG', 'img71.JPG',
+        'img72.JPG', 'img73.JPG', 'img74.JPG', 'img75.JPG', 'img76.JPG',
+        'img77.JPG', 'img78.JPG', 'img79.JPG', 'img80.JPG', 'img81.JPG',
+        'img82.JPG', 'img83.JPG', 'img84.JPG', 'img85.JPG', 'img86.JPG',
+        'img87.JPG', 'img88.JPG', 'img89.JPG', 'img90.JPG', 'img91.JPG',
+        'img92.JPG', 'img93.JPG', 'img94.JPG', 'img95.JPG', 'img96.JPG',
+        'img97.JPG', 'img98.JPG', 'img99.JPG', 'img100.JPG', 'img101.JPG',
+        'img102.JPG', 'img103.JPG', 'img104.JPG', 'img105.JPG', 'img106.JPG',
+        'img107.JPG', 'img108.JPG', 'img109.JPG', 'img110.JPG', 'img111.JPG',
+        'img112.JPG', 'img113.JPG', 'img114.JPG', 'img115.JPG', 'img116.JPG',
+        'img117.JPG', 'img118.JPG', 'img119.JPG', 'img120.JPG', 'img121.JPG',
+        'img122.JPG', 'img123.JPG', 'img124.JPG', 'img125.JPG', 'img126.JPG',
+        'img127.JPG', 'img128.JPG', 'img129.JPG', 'img130.JPG', 'img131.JPG',
+        'img132.JPG', 'img133.JPG', 'img134.JPG', 'img135.JPG', 'img136.JPG',
+        'img137.JPG', 'img138.JPG', 'img139.JPG', 'img140.JPG', 'img141.JPG',
+        'img142.JPG', 'img143.JPG', 'img144.JPG', 'img145.JPG', 'img146.JPG',
+        'img147.JPG', 'img148.JPG', 'img149.JPG', 'img150.JPG', 'img151.JPG',
+        'img152.JPG', 'img153.JPG', 'img154.JPG', 'img155.JPG', 'img156.JPG',
+        'img157.JPG', 'img158.JPG', 'img159.JPG', 'img160.JPG', 'img161.JPG',
+        'img162.JPG', 'img163.JPG', 'img164.JPG', 'img165.JPG', 'img166.JPG'
     ];
-
-    // Generate gallery1.jpg through gallery61.jpg
-    const generatedImages = Array.from({ length: 61 }, (_, i) => `gallery${i + 1}.jpg`);
-    
-    // Combine both lists
-    const allImages = [...manualImages, ...generatedImages];
 
     const galleryGrid = document.getElementById('gallery-grid');
     const basePath = './src/images/gallery/';
 
     function initGallery() {
+        const fragment = document.createDocumentFragment();
+        const items = []; // Store references to avoid querySelectorAll later
+
         allImages.forEach((img) => {
             const card = document.createElement('div');
             // We use encodeURIComponent in case you have spaces or parentheses in the filenames
@@ -214,8 +283,7 @@
                     <img src="${fullPath}" 
                          alt="Cricket PEI Action" 
                          class="h-full w-full object-cover transition-transform duration-700 ease-out"
-                         loading="lazy"
-                         onerror="this.closest('.gallery-item').remove()">
+                         loading="lazy">
                     
                     <div class="overlay absolute inset-0 bg-blue-900/40 opacity-0 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
                         <div class="bg-white/20 backdrop-blur-xl p-4 md:p-5 rounded-full border border-white/30 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -224,8 +292,20 @@
                     </div>
                 </a>
             `;
-            galleryGrid.appendChild(card);
+            fragment.appendChild(card);
+            items.push(card);
         });
+
+        galleryGrid.appendChild(fragment);
+
+        // Optimized Error Handling: Use event delegation with capture phase
+        // This avoids creating an inline function for every single image
+        galleryGrid.addEventListener('error', (e) => {
+            if (e.target.tagName === 'IMG') {
+                const card = e.target.closest('.gallery-item');
+                if (card) card.remove();
+            }
+        }, true);
 
         // Initialize Lightbox
         const lightbox = GLightbox({
@@ -240,11 +320,12 @@
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('reveal');
+                    observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.05 });
 
-        document.querySelectorAll('.gallery-item').forEach(item => observer.observe(item));
+        items.forEach(item => observer.observe(item));
     }
 
     // Navbar Toggle

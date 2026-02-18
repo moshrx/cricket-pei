@@ -29,6 +29,8 @@
     <link rel="apple-touch-icon" href="./src/logo.jpg">
     <link rel="canonical" href="https://cricketpei.com/schedule.html">
     <title>CCL Schedule | Cricket PEI</title>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -48,13 +50,24 @@
                     <span class="font-bold text-lg md:text-xl tracking-tighter text-blue-900 uppercase">Cricket PEI</span>
                 </a>
 
-                <div class="hidden md:flex items-center space-x-6 lg:space-x-8 font-semibold text-xs uppercase tracking-wider text-gray-700">
+                <div class="hidden md:flex items-center space-x-2 lg:space-x-4 font-semibold text-xs uppercase tracking-wider text-gray-700">
                     <a href="index.html" class="hover:text-blue-600 transition">Home</a>
                     <a href="about.html" class="hover:text-blue-600 transition">Our Story</a>
                     <a href="board.html" class="hover:text-blue-600 transition">Leadership</a>
                     <a href="schedule.html" class="text-blue-600 border-b-2 border-blue-600">CCL Schedule</a>
                     <a href="gallery.html" class="hover:text-blue-600 transition">Gallery</a>
                     <a href="programs.html" class="hover:text-blue-600 transition">Programs</a>
+                    <a href="https://cricclubs.com/CAPEICricket" target="_blank" class="flex items-center gap-1.5 px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-bold uppercase tracking-wider rounded-full transition shadow-sm">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                        </span>
+                        Live Scores
+                    </a>
+                    <a href="https://www.youtube.com/@cricketpei/streams" target="_blank" class="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-full font-bold text-[10px] uppercase tracking-widest transition shadow-sm">
+                        <i class="fa-brands fa-youtube text-sm"></i>
+                        <span class="hidden lg:inline">Watch Live</span>
+                    </a>
                     <a href="https://cricketcanada.org/" target="_blank" class="flex items-center gap-2 px-2.5 py-1 rounded-lg hover:opacity-80 transition group" title="Cricket Canada">
                         <img src="./src/images/bg-img/cricketcanada.webp" alt="Cricket Canada" class="h-12 w-auto group-hover:scale-110 transition">
                     </a>
@@ -65,13 +78,24 @@
                 </button>
             </div>
         </div>
-        <div id="nav-links" class="hidden md:hidden bg-white border-b border-gray-100 py-6 px-6 space-y-4 font-bold uppercase text-xs tracking-widest text-center shadow-inner">
+        <div id="nav-links" class="hidden md:hidden bg-white border-b border-gray-100 py-6 px-6 space-y-4 font-bold uppercase text-xs tracking-widest text-center shadow-inner max-h-screen overflow-y-auto">
             <a href="index.html" class="block py-2 border-b border-gray-50">Home</a>
             <a href="about.html" class="block py-2 border-b border-gray-50">Our Story</a>
             <a href="board.html" class="block py-2 border-b border-gray-50">Leadership</a>
             <a href="schedule.html" class="block py-2 text-blue-600">CCL Schedule</a>
             <a href="gallery.html" class="block py-2 border-b border-gray-50">Gallery</a>
             <a href="programs.html" class="block py-2 border-b border-gray-50">Programs</a>
+            <a href="https://cricclubs.com/CAPEICricket" target="_blank" class="flex items-center justify-center gap-2 mx-auto my-1 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest transition shadow-sm">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                </span>
+                Live Scores
+            </a>
+            <a href="https://www.youtube.com/@cricketpei/streams" target="_blank" class="flex items-center justify-center gap-2 mx-auto my-1 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest transition shadow-sm">
+                <i class="fa-brands fa-youtube text-sm"></i>
+                Watch Live Game
+            </a>
             <a href="https://cricketcanada.org/" target="_blank" class="flex items-center justify-center py-3 border-b border-gray-50 hover:opacity-80 transition" title="Cricket Canada">
                 <img src="./src/images/bg-img/cricketcanada.webp" alt="Cricket Canada" class="h-14 w-auto">
             </a>
@@ -131,18 +155,32 @@
                     <h4 class="font-bold text-white uppercase text-xs tracking-[0.3em] mb-6 border-l-2 border-blue-600 pl-3">Stay Connected</h4>
                     <p class="text-gray-400 text-sm mb-6 leading-relaxed">Follow us for live updates, match highlights, and community news.</p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="https://www.facebook.com/p/PEI-Cricket-Association-100057478210038/" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20" title="Facebook">
-                            <i class="fa-brands fa-facebook-f text-white"></i>
+                        <a href="https://www.facebook.com/p/PEI-Cricket-Association-100057478210038/" target="_blank" aria-label="Visit Cricket PEI on Facebook" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20">
+                            <i class="fa-brands fa-facebook-f text-white" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.instagram.com/cricketpei" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20" title="Instagram">
-                            <i class="fa-brands fa-instagram text-white"></i>
+                        <a href="https://www.instagram.com/cricketpei" target="_blank" aria-label="Visit Cricket PEI on Instagram" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20">
+                            <i class="fa-brands fa-instagram text-white" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.youtube.com/@cricketpei" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20" title="YouTube">
-                            <i class="fa-brands fa-youtube text-white"></i>
+                        <a href="https://www.youtube.com/@cricketpei" target="_blank" aria-label="Visit Cricket PEI on YouTube" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20">
+                            <i class="fa-brands fa-youtube text-white" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
             </div>
+        <div class="mb-12">
+            <h4 class="font-bold text-white uppercase text-xs tracking-[0.3em] mb-6 border-l-2 border-blue-600 pl-3">Our Partners</h4>
+            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3 md:gap-4">
+                <div class="bg-white rounded-lg p-2 h-16 md:h-20 flex items-center justify-center hover:opacity-90 transition"><img src="src/images/sponsor/sponser1.jpg" alt="Partner 1" loading="lazy" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-lg p-2 h-16 md:h-20 flex items-center justify-center hover:opacity-90 transition"><img src="src/images/sponsor/sponser2.jpg" alt="Partner 2" loading="lazy" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-lg p-2 h-16 md:h-20 flex items-center justify-center hover:opacity-90 transition"><img src="src/images/sponsor/sponser3.jpg" alt="Partner 3" loading="lazy" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-lg p-2 h-16 md:h-20 flex items-center justify-center hover:opacity-90 transition"><img src="src/images/sponsor/sponser4.jpg" alt="Partner 4" loading="lazy" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-lg p-2 h-16 md:h-20 flex items-center justify-center hover:opacity-90 transition"><img src="src/images/sponsor/sponser5.jpg" alt="Partner 5" loading="lazy" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-lg p-2 h-16 md:h-20 flex items-center justify-center hover:opacity-90 transition"><img src="src/images/sponsor/sponser6.jpg" alt="Partner 6" loading="lazy" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-lg p-2 h-16 md:h-20 flex items-center justify-center hover:opacity-90 transition"><img src="src/images/sponsor/sponser7.jpg" alt="Partner 7" loading="lazy" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-lg p-2 h-16 md:h-20 flex items-center justify-center hover:opacity-90 transition"><img src="src/images/sponsor/sponser8.jpg" alt="Partner 8" loading="lazy" class="max-h-full max-w-full object-contain"></div>
+                <div class="bg-white rounded-lg p-2 h-16 md:h-20 flex items-center justify-center hover:opacity-90 transition"><img src="src/images/sponsor/sponser9.jpg" alt="Partner 9" loading="lazy" class="max-h-full max-w-full object-contain"></div>
+            </div>
+        </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="text-gray-500 text-xs font-medium uppercase tracking-widest text-center md:text-left">
@@ -163,61 +201,120 @@
         const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT9Xj8AYl3ce1pG2nDrNKvFscKzFWvsBPBq6kJw91_4BYdNR4WbfwcwLNcEjBGek-XqvibbWLA_hTbf/pub?output=csv';
 
         async function loadSchedule() {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 10000);
             try {
-                const response = await fetch(SHEET_URL);
+                const response = await fetch(SHEET_URL, { signal: controller.signal });
+                clearTimeout(timeout);
                 const csvText = await response.text();
-                const data = parseCSV(csvText); 
-                renderSchedule(data); 
+                const data = parseCSV(csvText);
+                renderSchedule(data);
             } catch (error) {
+                clearTimeout(timeout);
+                const msg = error.name === 'AbortError' ? 'Request timed out. Please refresh.' : 'Failed to load live data.';
                 document.getElementById('schedule-container').innerHTML = `
                     <div class="text-center py-20 text-red-500">
-                        <i class="fa-solid fa-triangle-exclamation text-3xl mb-4"></i>
-                        <p class="font-bold uppercase text-xs">Failed to load live data.</p>
+                        <i class="fa-solid fa-triangle-exclamation text-3xl mb-4" aria-hidden="true"></i>
+                        <p class="font-bold uppercase text-xs">${msg}</p>
                     </div>`;
             }
         }
 
+        // RFC 4180-compliant CSV parser — handles commas inside quoted fields
         function parseCSV(csv) {
-            const lines = csv.split('\n');
-            const result = [];
-            const headers = lines[0].split(',').map(h => h.trim());
-            for (let i = 1; i < lines.length; i++) {
-                if (!lines[i].trim()) continue;
-                const obj = {};
-                const currentline = lines[i].split(',');
-                headers.forEach((header, s) => {
-                    obj[header] = currentline[s] ? currentline[s].trim() : "";
-                });
-                result.push(obj);
+            const rows = [];
+            const re = /("(?:[^"]|"")*"|[^,\r\n]*)(,|\r?\n|$)/g;
+            let headers = null;
+            let row = [];
+            let match;
+            while ((match = re.exec(csv)) !== null) {
+                let val = match[1];
+                if (val.startsWith('"') && val.endsWith('"')) {
+                    val = val.slice(1, -1).replace(/""/g, '"');
+                }
+                val = val.trim();
+                row.push(val);
+                const sep = match[2];
+                if (sep !== ',') {
+                    if (!headers) {
+                        headers = row;
+                    } else if (row.some(v => v !== '')) {
+                        const obj = {};
+                        headers.forEach((h, i) => { obj[h] = row[i] || ''; });
+                        rows.push(obj);
+                    }
+                    row = [];
+                }
+                if (match[2] === '' && match[1] === '') break;
             }
-            return result;
+            return rows;
+        }
+
+        function setText(el, tag, cls, text) {
+            const span = document.createElement(tag);
+            span.className = cls;
+            span.textContent = text;
+            el.appendChild(span);
         }
 
         function renderSchedule(data) {
             const container = document.getElementById('schedule-container');
-            container.innerHTML = data.map(match => `
-                <div class="bg-white border border-gray-100 rounded-2xl md:rounded-3xl shadow-sm hover:shadow-md transition-all overflow-hidden">
-                    <div class="flex flex-row">
-                        <div class="bg-blue-900 text-white w-20 md:w-32 flex flex-col justify-center items-center text-center p-3">
-                            <span class="text-[10px] uppercase opacity-70 font-bold">${match.Day?.substring(0,3) || 'TBA'}</span>
-                            <span class="text-xl md:text-2xl font-black">${match.Date?.split(' ')[0] || '??'}</span>
-                            <span class="text-[9px] font-bold bg-white/10 px-2 py-0.5 rounded mt-2">${match.Time || 'TBA'}</span>
-                        </div>
-                        
-                        <div class="flex-grow p-4 md:p-6 flex flex-col justify-center">
-                            <div class="flex items-center gap-2 font-black text-sm md:text-xl text-blue-900 uppercase">
-                                <span>${match.Team1}</span>
-                                <span class="text-gray-300 font-normal text-xs">VS</span>
-                                <span>${match.Team2}</span>
-                            </div>
-                            <div class="mt-3 flex flex-wrap gap-x-4 gap-y-1">
-                                <span class="text-[10px] font-bold text-gray-500 uppercase"><i class="fa-solid fa-location-dot text-red-500 mr-1"></i> ${match.Venue}</span>
-                                <span class="text-[10px] font-bold text-gray-500 uppercase"><i class="fa-solid fa-clock text-blue-500 mr-1"></i> Toss: ${match.TossTime}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
+            container.innerHTML = '';
+            data.forEach(match => {
+                const card = document.createElement('div');
+                card.className = 'bg-white border border-gray-100 rounded-2xl md:rounded-3xl shadow-sm hover:shadow-md transition-all overflow-hidden';
+
+                const row = document.createElement('div');
+                row.className = 'flex flex-row';
+
+                // Date panel
+                const datePanel = document.createElement('div');
+                datePanel.className = 'bg-blue-900 text-white w-20 md:w-32 flex flex-col justify-center items-center text-center p-3';
+                const dayEl = document.createElement('span');
+                dayEl.className = 'text-[10px] uppercase opacity-70 font-bold';
+                dayEl.textContent = (match.Day || 'TBA').substring(0, 3);
+                const dateEl = document.createElement('span');
+                dateEl.className = 'text-xl md:text-2xl font-black';
+                dateEl.textContent = (match.Date || '??').split(' ')[0];
+                const timeEl = document.createElement('span');
+                timeEl.className = 'text-[9px] font-bold bg-white/10 px-2 py-0.5 rounded mt-2';
+                timeEl.textContent = match.Time || 'TBA';
+                datePanel.append(dayEl, dateEl, timeEl);
+
+                // Content panel
+                const content = document.createElement('div');
+                content.className = 'flex-grow p-4 md:p-6 flex flex-col justify-center';
+
+                const teamsRow = document.createElement('div');
+                teamsRow.className = 'flex items-center gap-2 font-black text-sm md:text-xl text-blue-900 uppercase';
+                const t1 = document.createElement('span');
+                t1.textContent = match.Team1 || '';
+                const vs = document.createElement('span');
+                vs.className = 'text-gray-300 font-normal text-xs';
+                vs.textContent = 'VS';
+                const t2 = document.createElement('span');
+                t2.textContent = match.Team2 || '';
+                teamsRow.append(t1, vs, t2);
+
+                const meta = document.createElement('div');
+                meta.className = 'mt-3 flex flex-wrap gap-x-4 gap-y-1';
+
+                const venueSpan = document.createElement('span');
+                venueSpan.className = 'text-[10px] font-bold text-gray-500 uppercase';
+                venueSpan.innerHTML = '<i class="fa-solid fa-location-dot text-red-500 mr-1" aria-hidden="true"></i>';
+                venueSpan.appendChild(document.createTextNode(match.Venue || ''));
+
+                const tossSpan = document.createElement('span');
+                tossSpan.className = 'text-[10px] font-bold text-gray-500 uppercase';
+                tossSpan.innerHTML = '<i class="fa-solid fa-clock text-blue-500 mr-1" aria-hidden="true"></i>Toss: ';
+                tossSpan.appendChild(document.createTextNode(match.TossTime || ''));
+
+                meta.append(venueSpan, tossSpan);
+                content.append(teamsRow, meta);
+                row.append(datePanel, content);
+                card.appendChild(row);
+                container.appendChild(card);
+            });
         }
 
         document.getElementById('menu-btn').onclick = () => {

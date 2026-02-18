@@ -11,11 +11,11 @@
                 </div>
                 <div class="space-y-3 text-sm">
                     <a href="tel:9023147644" class="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition group">
-                        <i class="fa-solid fa-phone text-blue-500 group-hover:scale-110 transition"></i>
+                        <i class="fa-solid fa-phone text-blue-500 group-hover:scale-110 transition" aria-hidden="true"></i>
                         <span class="font-medium">902-314-7644</span>
                     </a>
                     <a href="mailto:cricketpei@gmail.com" class="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition group">
-                        <i class="fa-solid fa-envelope text-blue-500 group-hover:scale-110 transition"></i>
+                        <i class="fa-solid fa-envelope text-blue-500 group-hover:scale-110 transition" aria-hidden="true"></i>
                         <span class="font-medium">cricketpei@gmail.com</span>
                     </a>
                 </div>
@@ -23,7 +23,7 @@
 
             <div class="flex flex-col space-y-4">
                 <h4 class="font-bold text-white uppercase text-xs tracking-[0.3em] mb-2 border-l-2 border-blue-600 pl-3">Quick Links</h4>
-                <nav class="flex flex-col space-y-3 text-sm">
+                <nav aria-label="Footer Quick Links" class="flex flex-col space-y-3 text-sm">
                     <a href="about.html" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300">Our Story</a>
                     <a href="board.html" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300">Leadership</a>
                     <a href="programs.html" class="text-gray-400 hover:text-white hover:translate-x-1 transition-all duration-300">Programs</a>
@@ -36,16 +36,30 @@
                 <h4 class="font-bold text-white uppercase text-xs tracking-[0.3em] mb-6 border-l-2 border-blue-600 pl-3">Stay Connected</h4>
                 <p class="text-gray-400 text-sm mb-6 leading-relaxed">Follow us for live updates, match highlights, and community news.</p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="https://www.facebook.com/p/PEI-Cricket-Association-100057478210038/" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20" title="Facebook">
-                        <i class="fa-brands fa-facebook-f text-white"></i>
+                    <a href="https://www.facebook.com/p/PEI-Cricket-Association-100057478210038/" target="_blank" rel="noopener noreferrer" aria-label="Visit Cricket PEI on Facebook" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20">
+                        <i class="fa-brands fa-facebook-f text-white" aria-hidden="true"></i>
                     </a>
-                    <a href="https://www.instagram.com/cricketpei" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20" title="Instagram">
-                        <i class="fa-brands fa-instagram text-white"></i>
+                    <a href="https://www.instagram.com/cricketpei" target="_blank" rel="noopener noreferrer" aria-label="Visit Cricket PEI on Instagram" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20">
+                        <i class="fa-brands fa-instagram text-white" aria-hidden="true"></i>
                     </a>
-                    <a href="https://www.youtube.com/@cricketpei" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20" title="YouTube">
-                        <i class="fa-brands fa-youtube text-white"></i>
+                    <a href="https://www.youtube.com/@cricketpei" target="_blank" rel="noopener noreferrer" aria-label="Visit Cricket PEI on YouTube" class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center hover:bg-red-600 hover:-translate-y-1 transition-all duration-300 text-xl shadow-lg shadow-black/20">
+                        <i class="fa-brands fa-youtube text-white" aria-hidden="true"></i>
                     </a>
                 </div>
+            </div>
+        </div>
+        <div class="mb-12">
+            <h4 class="font-bold text-white uppercase text-xs tracking-[0.3em] mb-6 border-l-2 border-blue-600 pl-3">Our Partners</h4>
+            <div aria-label="Partner Logos" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
+                <div class="bg-white rounded-xl p-3 md:p-4 h-24 sm:h-28 md:h-32 flex items-center justify-center overflow-hidden hover:opacity-90 transition"><img src="src/images/sponsor/sponser1.jpg" alt="Partner 1" loading="lazy" decoding="async" class="w-full h-full object-contain"></div>
+                <div class="bg-white rounded-xl p-3 md:p-4 h-24 sm:h-28 md:h-32 flex items-center justify-center overflow-hidden hover:opacity-90 transition"><img src="src/images/sponsor/sponser2.jpg" alt="Partner 2" loading="lazy" decoding="async" class="w-full h-full object-contain"></div>
+                <div class="bg-white rounded-xl p-3 md:p-4 h-24 sm:h-28 md:h-32 flex items-center justify-center overflow-hidden hover:opacity-90 transition"><img src="src/images/sponsor/sponser3.jpg" alt="Partner 3" loading="lazy" decoding="async" class="w-full h-full object-contain"></div>
+                <div class="bg-white rounded-xl p-3 md:p-4 h-24 sm:h-28 md:h-32 flex items-center justify-center overflow-hidden hover:opacity-90 transition"><img src="src/images/sponsor/sponser4.jpg" alt="Partner 4" loading="lazy" decoding="async" class="w-full h-full object-contain"></div>
+                <div class="bg-white rounded-xl p-3 md:p-4 h-24 sm:h-28 md:h-32 flex items-center justify-center overflow-hidden hover:opacity-90 transition"><img src="src/images/sponsor/sponser5.jpg" alt="Partner 5" loading="lazy" decoding="async" class="w-full h-full object-contain"></div>
+                <div class="bg-white rounded-xl p-3 md:p-4 h-24 sm:h-28 md:h-32 flex items-center justify-center overflow-hidden hover:opacity-90 transition"><img src="src/images/sponsor/sponser6.jpg" alt="Partner 6" loading="lazy" decoding="async" class="w-full h-full object-contain"></div>
+                <div class="bg-white rounded-xl p-3 md:p-4 h-24 sm:h-28 md:h-32 flex items-center justify-center overflow-hidden hover:opacity-90 transition"><img src="src/images/sponsor/sponser7.jpg" alt="Partner 7" loading="lazy" decoding="async" class="w-full h-full object-contain"></div>
+                <div class="bg-white rounded-xl p-3 md:p-4 h-24 sm:h-28 md:h-32 flex items-center justify-center overflow-hidden hover:opacity-90 transition"><img src="src/images/sponsor/sponser8.jpg" alt="Partner 8" loading="lazy" decoding="async" class="w-full h-full object-contain"></div>
+                <div class="bg-white rounded-xl p-3 md:p-4 h-24 sm:h-28 md:h-32 flex items-center justify-center overflow-hidden hover:opacity-90 transition"><img src="src/images/sponsor/sponser9.jpg" alt="Partner 9" loading="lazy" decoding="async" class="w-full h-full object-contain"></div>
             </div>
         </div>
 
@@ -55,7 +69,7 @@
             </div>
             <div class="text-gray-600 text-[10px] uppercase tracking-[0.2em] font-bold">
                 Designed for the Island • Developed by
-                <a href="https://moshrx.netlify.app/" target="_blank" class="text-gray-400 hover:text-gray-300 transition">
+                <a href="https://moshrx.netlify.app/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-300 transition">
                     moshr
                 </a>
             </div>
