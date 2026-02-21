@@ -5,7 +5,12 @@
       "Bash(node -c:*)",
       "Bash(kill:*)",
       "Bash(node -e:*)",
-      "Bash(node test-chatbot.js:*)"
+      "Bash(node test-chatbot.js:*)",
+      "Bash(for f in index.html about.html board.html gallery.html schedule.html programs.html privacy.html)",
+      "Bash(do)",
+      "Bash(done)",
+      "Bash(xmllint:*)",
+      "Bash(node:*)"
     ]
   }
 }
