@@ -9,24 +9,24 @@
             answer: "Hey there! Welcome to Cricket PEI. I'm here to help you with anything about cricket on the Island. What would you like to know?"
         },
         {
-            keys: ['what is cricket pei', 'about cricket pei', 'who are you', 'tell me about', 'what do you do', 'organization'],
+            keys: ['what is cricket pei', 'about cricket pei', 'who are you', 'tell me about cricket pei', 'tell me about pei cricket', 'what do you do', 'organization'],
             answer: 'Cricket PEI (PEI Cricket Association) has been promoting cricket excellence and community growth on Prince Edward Island since 2007. We have 300+ active players, 2 major grounds, and over 15 years of history. <a href="about.html">Read our full story &rarr;</a>'
         },
         {
             keys: ['register', 'registration', 'sign up', 'signup', 'join', 'membership', 'member', 'how to join', 'become a member', 'enroll', 'enrolment'],
-            answer: 'Registration for the 2026 season is open! You get full season league play, coaching & equipment access, and an official membership card. <a href="https://docs.google.com/forms/d/e/1FAIpQLSeULzCAE38hfVo3_wEAjflkHBK3uLeL6M88QucaGU-PWAoD9A/viewform" target="_blank">Apply now &rarr;</a>'
+            answer: 'Registration for the 2026 season is open! You get full season league play, coaching & equipment access, and an official membership card. <a href="https://docs.google.com/forms/d/e/1FAIpQLSeULzCAE38hfVo3_wEAjflkHBK3uLeL6M88QucaGU-PWAoD9A/viewform" target="_blank" rel="noopener noreferrer">Apply now &rarr;</a>'
         },
         {
-            keys: ['schedule', 'fixture', 'match', 'game', 'next match', 'next game', 'upcoming', 'when is the match', 'when is the game'],
+            keys: ['schedule', 'fixture', 'match', 'cricket game', 'next match', 'next game', 'upcoming', 'when is the match', 'when is the game'],
             answer: 'Check out the latest CCL match schedule with dates, times, and venues. <a href="schedule.html">View the CCL Schedule &rarr;</a>'
         },
         {
             keys: ['live score', 'score', 'scorecard', 'cricclubs', 'live scores'],
-            answer: 'You can follow live scores on CricClubs: <a href="https://cricclubs.com/CAPEICricket" target="_blank">Live Scores &rarr;</a>'
+            answer: 'You can follow live scores on CricClubs: <a href="https://cricclubs.com/CAPEICricket" target="_blank" rel="noopener noreferrer">Live Scores &rarr;</a>'
         },
         {
             keys: ['watch', 'stream', 'youtube', 'live stream', 'broadcast', 'video', 'watch live'],
-            answer: 'Watch our matches live on YouTube! <a href="https://www.youtube.com/@cricketpei/streams" target="_blank">Watch Live &rarr;</a>'
+            answer: 'Watch our matches live on YouTube! <a href="https://www.youtube.com/@cricketpei/streams" target="_blank" rel="noopener noreferrer">Watch Live &rarr;</a>'
         },
         {
             keys: ['ccl', 'chandrasekara', 'league', 'championship', 'tournament'],
@@ -54,7 +54,7 @@
         },
         {
             keys: ['social', 'facebook', 'instagram', 'follow'],
-            answer: 'Follow us on social media!<br><a href="https://www.facebook.com/p/PEI-Cricket-Association-100057478210038/" target="_blank">Facebook</a> &bull; <a href="https://www.instagram.com/cricketpei" target="_blank">Instagram</a> &bull; <a href="https://www.youtube.com/@cricketpei" target="_blank">YouTube</a>'
+            answer: 'Follow us on social media!<br><a href="https://www.facebook.com/p/PEI-Cricket-Association-100057478210038/" target="_blank" rel="noopener noreferrer">Facebook</a> &bull; <a href="https://www.instagram.com/cricketpei" target="_blank" rel="noopener noreferrer">Instagram</a> &bull; <a href="https://www.youtube.com/@cricketpei" target="_blank" rel="noopener noreferrer">YouTube</a>'
         },
         {
             keys: ['location', 'ground', 'field', 'venue', 'tea hill', 'where do you play', 'address', 'tea hill park', 'cricket ground'],
@@ -82,7 +82,7 @@
         },
         {
             keys: ['cricket canada', 'canada cricket', 'national body', 'national team'],
-            answer: 'Cricket PEI is affiliated with Cricket Canada, the national governing body. <a href="https://cricketcanada.org/" target="_blank">Visit Cricket Canada &rarr;</a>'
+            answer: 'Cricket PEI is affiliated with Cricket Canada, the national governing body. <a href="https://cricketcanada.org/" target="_blank" rel="noopener noreferrer">Visit Cricket Canada &rarr;</a>'
         },
         {
             keys: ['thank', 'thanks', 'thx', 'appreciate'],
@@ -108,6 +108,17 @@
         var q = input.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim();
         if (!q) return null;
 
+        /* high-priority live intents */
+        var hasLive = q.indexOf('live') !== -1;
+        var asksVideo = q.indexOf('video') !== -1 || q.indexOf('stream') !== -1 || q.indexOf('watch') !== -1 || q.indexOf('youtube') !== -1 || q.indexOf('game') !== -1 || q.indexOf('match') !== -1;
+        var asksScore = q.indexOf('score') !== -1 || q.indexOf('scorecard') !== -1 || q.indexOf('scores') !== -1;
+        if (hasLive && asksScore) {
+            return 'You can follow live scores on CricClubs: <a href="https://cricclubs.com/CAPEICricket" target="_blank" rel="noopener noreferrer">Live Scores &rarr;</a>';
+        }
+        if (hasLive && asksVideo) {
+            return 'Watch our matches live on YouTube: <a href="https://www.youtube.com/@cricketpei/streams" target="_blank" rel="noopener noreferrer">Watch Live &rarr;</a>';
+        }
+
         var bestMatch = null;
         var bestScore = 0;
 
@@ -115,7 +126,8 @@
             var entry = KB[i];
             for (var j = 0; j < entry.keys.length; j++) {
                 var key = entry.keys[j];
-                if (q === key || q.indexOf(key) !== -1 || key.indexOf(q) !== -1) {
+                /* exact match, query contains key, or key contains query (only if query is 5+ chars) */
+                if (q === key || q.indexOf(key) !== -1 || (q.length >= 5 && key.indexOf(q) !== -1)) {
                     var score = key.length;
                     if (q === key) score += 100;
                     if (score > bestScore) {
@@ -126,10 +138,9 @@
             }
         }
 
-        /* word-level partial matching as fallback */
+        /* word-level partial matching as fallback — always require 2+ keyword hits */
         if (!bestMatch) {
             var words = q.split(/\s+/);
-            var minMatches = words.length > 2 ? 2 : 1;
             for (var i = 0; i < KB.length; i++) {
                 var entry = KB[i];
                 var matchCount = 0;
@@ -142,7 +153,7 @@
                         }
                     }
                 }
-                if (matchCount >= minMatches && matchCount > bestScore) {
+                if (matchCount >= 2 && matchCount > bestScore) {
                     bestScore = matchCount;
                     bestMatch = entry;
                 }
@@ -263,26 +274,6 @@
             return window.innerWidth <= 480;
         }
 
-        function lockBody() {
-            if (isMobile()) {
-                document.body.style.overflow = 'hidden';
-                document.body.style.position = 'fixed';
-                document.body.style.width = '100%';
-                document.body.style.top = '-' + window.scrollY + 'px';
-            }
-        }
-
-        function unlockBody() {
-            var scrollY = document.body.style.top;
-            document.body.style.overflow = '';
-            document.body.style.position = '';
-            document.body.style.width = '';
-            document.body.style.top = '';
-            if (scrollY) {
-                window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
-            }
-        }
-
         /* ── Events ──────────────────────────────────── */
         toggle.addEventListener('click', function () {
             isOpen = !isOpen;
@@ -295,7 +286,6 @@
             if (badge) badge.remove();
 
             if (isOpen) {
-                lockBody();
                 /* Small delay so mobile keyboard doesn't auto-pop */
                 if (!isMobile()) { input.focus(); }
                 /* Show welcome on first open */
@@ -304,7 +294,6 @@
                     renderQuickReplies();
                 }
             } else {
-                unlockBody();
                 input.blur();
             }
         });
@@ -329,14 +318,6 @@
             }
         });
 
-        /* Handle resize (orientation change) while open */
-        window.addEventListener('resize', function () {
-            if (isOpen && isMobile()) {
-                lockBody();
-            } else if (isOpen) {
-                unlockBody();
-            }
-        });
     }
 
     /* ── Init ──────────────────────────────────────────────── */
