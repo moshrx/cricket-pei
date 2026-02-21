@@ -182,7 +182,10 @@
         win.innerHTML =
             '<div class="cpei-chat-header">' +
                 '<div class="cpei-chat-header-avatar"><i class="fa-solid fa-baseball"></i></div>' +
-                '<div class="cpei-chat-header-info"><h3>Cricket PEI</h3><p>Ask me anything about cricket on PEI</p></div>' +
+                '<div class="cpei-chat-header-info" style="flex:1"><h3>Cricket PEI</h3><p>Ask me anything about cricket on PEI</p></div>' +
+                '<button id="cpei-close-btn" aria-label="Close chat" style="background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;justify-content:center">' +
+                    '<svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>' +
+                '</button>' +
             '</div>' +
             '<div class="cpei-chat-messages" id="cpei-messages"></div>' +
             '<div class="cpei-quick-replies" id="cpei-quick-replies"></div>' +
@@ -255,6 +258,31 @@
             }, delay);
         }
 
+        /* ── Mobile helpers ───────────────────────────── */
+        function isMobile() {
+            return window.innerWidth <= 480;
+        }
+
+        function lockBody() {
+            if (isMobile()) {
+                document.body.style.overflow = 'hidden';
+                document.body.style.position = 'fixed';
+                document.body.style.width = '100%';
+                document.body.style.top = '-' + window.scrollY + 'px';
+            }
+        }
+
+        function unlockBody() {
+            var scrollY = document.body.style.top;
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+            document.body.style.top = '';
+            if (scrollY) {
+                window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+            }
+        }
+
         /* ── Events ──────────────────────────────────── */
         toggle.addEventListener('click', function () {
             isOpen = !isOpen;
@@ -267,13 +295,22 @@
             if (badge) badge.remove();
 
             if (isOpen) {
-                input.focus();
+                lockBody();
+                /* Small delay so mobile keyboard doesn't auto-pop */
+                if (!isMobile()) { input.focus(); }
                 /* Show welcome on first open */
                 if (messages.children.length === 0) {
                     addMessage("Hi! I'm the Cricket PEI assistant. Ask me about registration, schedules, programs, or anything about cricket on the Island!", 'bot');
                     renderQuickReplies();
                 }
+            } else {
+                unlockBody();
+                input.blur();
             }
+        });
+
+        document.getElementById('cpei-close-btn').addEventListener('click', function () {
+            if (isOpen) toggle.click();
         });
 
         sendBtn.addEventListener('click', function () { handleSend(); });
@@ -289,6 +326,15 @@
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && isOpen) {
                 toggle.click();
+            }
+        });
+
+        /* Handle resize (orientation change) while open */
+        window.addEventListener('resize', function () {
+            if (isOpen && isMobile()) {
+                lockBody();
+            } else if (isOpen) {
+                unlockBody();
             }
         });
     }
