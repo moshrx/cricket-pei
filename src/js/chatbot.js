@@ -97,6 +97,7 @@
     var quickReplies = [
         'How to join?',
         'CCL Schedule',
+        'Watch Live',
         'Live Scores',
         'Contact Info',
         'Programs',
