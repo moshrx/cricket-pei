@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cricketpei.ca/sitemap.xml
