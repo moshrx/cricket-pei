@@ -94,54 +94,22 @@
             animation-play-state: paused;
         }
 
-        /* Featured meeting announcement: always visible beneath the navigation */
-        .meeting-ticker-track {
-            display: flex;
-            width: max-content;
-            animation: marquee 25s linear infinite;
-        }
-
-        .meeting-ticker-track:hover {
-            animation-play-state: paused;
-        }
-
-        .meeting-ticker-copy {
-            flex: 0 0 auto;
-            padding-right: 4rem;
-        }
-
         #news-banner {
-            top: 108px;
+            top: 136px;
         }
 
         #hero {
-            padding-top: 120px;
+            padding-top: 148px;
         }
 
         .news-banner-spacer {
-            padding-top: 170px !important;
-        }
-
-        @media (min-width: 768px) {
-            #news-banner {
-                top: 124px;
-            }
+            padding-top: 198px !important;
         }
 
         @media (prefers-reduced-motion: reduce) {
 
-            .meeting-ticker-track,
             .animate-marquee {
                 animation: none;
-            }
-
-            .meeting-ticker-track {
-                flex-wrap: wrap;
-                white-space: normal;
-            }
-
-            .meeting-ticker-copy:last-child {
-                display: none;
             }
         }
     </style>
@@ -295,27 +263,17 @@
         </div>
     </nav>
 
-    <!-- Highlighted scrolling notice: November 28 meetings -->
-    <section aria-label="Important meeting announcements"
-        class="fixed top-16 md:top-20 left-0 w-full h-11 z-40 flex items-center bg-amber-400 text-blue-950 border-b-2 border-amber-600 shadow-lg overflow-hidden">
-        <div
-            class="relative z-10 self-stretch flex items-center shrink-0 bg-blue-950 text-white px-3 sm:px-5 text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-lg">
-            <i class="fa-solid fa-bullhorn mr-2" aria-hidden="true"></i> Important
-        </div>
-        <div class="flex-1 overflow-hidden whitespace-nowrap" role="marquee"
-            aria-label="Special General Meeting, Saturday November 28 at 12 PM. Annual General Meeting, Saturday November 28 at 2 PM.">
-            <div class="meeting-ticker-track text-sm sm:text-base font-extrabold tracking-wide">
-                <span class="meeting-ticker-copy">📢 Special General Meeting — Saturday, November 28, 2026 at 12:00 PM
-                    <span class="mx-5">✦</span> Annual General Meeting (AGM) — Saturday, November 22, 2026 at 2:00 PM
-                    <span class="mx-5">✦</span></span>
-                <span class="meeting-ticker-copy" aria-hidden="true">📢 Special General Meeting — Saturday, November 28,
-                    2026 at 12:00 PM <span class="mx-5">✦</span> Annual General Meeting (AGM) — Saturday, November 28,
-                    2026 at 2:00 PM <span class="mx-5">✦</span></span>
-            </div>
-        </div>
-    </section>
-
     <main id="main-content">
+        <a href="src/documents/cricketpeidocuments/Cricket-PEI-AGM-2026.pptx" download="Cricket-PEI-AGM-2026.pptx"
+            aria-label="AGM 2026 Presentation — click here to download the PowerPoint"
+            class="fixed top-16 md:top-20 left-0 w-full h-[72px] md:h-14 z-40 flex items-center justify-center gap-3 px-4 bg-blue-900 hover:bg-blue-800 text-white border-b border-blue-700 shadow-lg transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-yellow-400">
+            <i class="fa-solid fa-file-powerpoint text-xl text-yellow-400 shrink-0" aria-hidden="true"></i>
+            <span class="flex flex-col md:flex-row items-center gap-1 md:gap-4 text-center">
+                <span class="font-black text-base md:text-lg uppercase tracking-wide">AGM 2026 Presentation</span>
+                <span class="text-sm font-semibold text-yellow-300 underline underline-offset-4">Click here to download
+                    <i class="fa-solid fa-download ml-1" aria-hidden="true"></i></span>
+            </span>
+        </a>
         <div id="news-banner"
             class="hidden fixed w-full z-30 bg-blue-700 text-white py-2 overflow-hidden border-b border-blue-800 shadow-lg">
             <div class="flex items-center">
